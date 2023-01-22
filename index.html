@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
+  <!-- <script async src="https://api.openweathermap.org/data/2.5/weather?q={cityname}&appid={425cfeeacd8d9bd14f3607abcaf4d4d7}"></script> -->
   <title>Weather</title>
 </head>
 
@@ -19,7 +18,18 @@
 
 <body>
 
+  <div id="searchBox">
+    <h1> Search for a City:</h1>
+    <input type="text" id="search"  placeholder="City Name"></input>
+    <button type="button"  id="fetchSearch"> Search</button>
+  </div>
+  <div id="preset">
+    <h3 id="entry"></h3>
+  </div>
+  <div id="weather"></div>
+  <div id="fiveDay"></div>
     
   
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js"></script>
 </body>
