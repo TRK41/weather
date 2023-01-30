@@ -20,16 +20,23 @@
 
   <div id="searchBox">
     <h1> Search for a City:</h1>
-    <input type="text" id="search"  placeholder="City Name"></input>
-    <button type="button"  id="fetchSearch"> Search</button>
+    <form id="user-form"  placeholder="City Name">
+    <input name = "cityname" id = "cityname" type="text" class="form-input"/>
+    <button type="submit"  id="fetchButton"> Search City</button>
+    </form>
   </div>
   <div id="preset">
-    <h3 id="entry"></h3>
+    <h3 id="entry"> Previously Searched:</h3>
+    <span id=" "> </span>
   </div>
-  <div id="weather"></div>
+  <div id="weather"><h2 id ="cityname"><p id="weatherDay"></p> </h2></div>
+  
+
+
   <div id="fiveDay"></div>
     
-  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
+7
