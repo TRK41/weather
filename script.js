@@ -11,7 +11,7 @@ cityInputEl.value = searches;
 
 
 const formSubmitHandler = (event) =>{
-    event.preventDefault();
+    preventDefault(event);
 
     var cityName = cityInputEl.value.trim();
 
@@ -58,6 +58,7 @@ const getCityWeather = (cityName) =>{
 };
 console.log(searches);
 
+
 // const displayWeather = (cities, searchTerm) => {
 //     if (cities.length === 0){
 //         ci
@@ -73,7 +74,7 @@ setInterval(function time() {
      $("#weatherDay").text(weatherDate);
 }, );
 
-
+fetchButton.addEventListener("click",getCityWeather(cityName));
 
 
 // fetchButton.addEventListener('click',function(event){
