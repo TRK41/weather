@@ -4,6 +4,7 @@ var cityInputEl = document.getElementById('cityname');
 var citySaveEl = document.getElementById('list');
 let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var searches = [];
+const cityName = cityInputEl.value
 
 const getInput = () => {
     console.log(cityInputEl.value)
@@ -21,7 +22,7 @@ fetchButton.addEventListener('click',function(event){
 event.preventDefault();
 
 const getCityWeather = (cityName) =>{
-    const cityName = cityInputEl.value
+    
     var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName +'&appid='+ apiKey;
     // var requestUrl = 'https://api.github.com/users/TRK41/repos'
     fetch(requestUrl)
@@ -35,42 +36,43 @@ const getCityWeather = (cityName) =>{
         });    
             //  displayWeather(data,cityName);
             
-
+            window.onload = function() {
+                getCityWeather( cityName);
+              }
             
         }
         
     
-       
-    
         
-    fetchButton.addEventListener(click,function(){
-        const searched = cityInputEl.value;
-        getCityWeather(searches);
-        searchHistory.push(searches);
-        localStorage.setItem("search",JSON.stringify(searchHistory));
-        searched();
+    // fetchButton.addEventListener(click,function(){
+    //     const searched = cityInputEl.value;
+    //     getCityWeather(searches);
+    //     searchHistory.push(searches);
+    //     localStorage.setItem("search",JSON.stringify(searchHistory));
+    //     searched();
 
-    }),
+        searched = () => {
+            citySaveEl.innerHTML = "";
+            for (var i = 0; i < searchHistory.length; i++) {
+                var li = document.createElement("li");
+                li.setAttribute("type","text");
+                li.setAttribute("readonly",true);
+                li.setAttribute("value",searchHistory[i]);
+                li.addEventListener("click",function(){
+                    getCityWeather(li.value);
+                })
+                citySaveEl.appendChild(li);
+                
+            }
+            }
+            var weatherDate = moment().format('MM/Do/YY');
+            //current weather time (real time)
+            setInterval(function time() {
+                 
+                 $("#weatherDay").text(weatherDate);
+            })
 
-    searched = () => {
-    citySaveEl.innerHTML = "";
-    for (var i = 0; i < searchHistory.length; i++) {
-        var li = document.createElement("li");
-        li.setAttribute("type","text");
-        li.setAttribute("readonly",true);
-        li.setAttribute("value",searchHistory[i]);
-        li.addEventListener("click",function(){
-            getCityWeather(li.value);
-        })
-        citySaveEl.appendChild(li);
-        
-    }
-    }
 
-    var weatherDate = moment().format('MM/Do/YY');
-    //current weather time (real time)
-    setInterval(function time() {
-         
-         $("#weatherDay").text(weatherDate);
-    }, );
-})
+    },
+);
+});
