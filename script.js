@@ -6,7 +6,11 @@ let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var searches = [];
 const cityName = cityInputEl.value
 
-const getInput = () => {
+let citySaveEl = searches
+
+getCityWeather(cityName);
+
+var getInput = () => {
     console.log(cityInputEl.value)
     console.log(cityInputEl)
 
@@ -37,27 +41,19 @@ const getCityWeather = (cityName) =>{
             //  displayWeather(data,cityName);
             
             window.onload = function() {
-                getCityWeather( cityName);
+                getCityWeather(cityName);
               }
             
         }
         
-    
-        
-    // fetchButton.addEventListener(click,function(){
-    //     const searched = cityInputEl.value;
-    //     getCityWeather(searches);
-    //     searchHistory.push(searches);
-    //     localStorage.setItem("search",JSON.stringify(searchHistory));
-    //     searched();
 
-        searched = () => {
+        searched = (cityName) => {
             citySaveEl.innerHTML = "";
-            for (var i = 0; i < searchHistory.length; i++) {
+            for (var i = 0; i < searches.length; i++) {
                 var li = document.createElement("li");
                 li.setAttribute("type","text");
                 li.setAttribute("readonly",true);
-                li.setAttribute("value",searchHistory[i]);
+                li.setAttribute("value",searches[i]);
                 li.addEventListener("click",function(){
                     getCityWeather(li.value);
                 })
@@ -75,4 +71,4 @@ const getCityWeather = (cityName) =>{
 
     },
 );
-});
+

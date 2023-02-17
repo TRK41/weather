@@ -5,7 +5,7 @@
   
   
   ## Description
-  Portfolio of the work I have down during the bootcamp running on React.js
+  Weather dashboard that gives you the weather based on the city you have entered.
 
   ## Table of Contents
   -[Installation](#installation)
