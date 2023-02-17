@@ -6,7 +6,7 @@
   
   ## Description
   Portfolio of the work I have down during the bootcamp running on React.js
-
+  ![alt text](/Screenshot (13).png " Weather Dashboard")
   ## Table of Contents
   -[Installation](#installation)
   -[Website](#website)
