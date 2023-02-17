@@ -6,7 +6,7 @@
   
   ## Description
   Weather dashboard that gives you the weather based on the city you have entered.  
-  ![alt text](Screenshot (13).png " Weather Dashboard")
+  ![alt text](weather/assets/Screenshot (13).png " Weather Dashboard")
   ## Table of Contents
   -[Installation](#installation)
   -[Website](#website)
