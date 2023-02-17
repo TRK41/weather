@@ -20,16 +20,16 @@
 
   <div id="searchBox">
     <h1> Search for a City:</h1>
-    <form id="user-form"  placeholder="City Name">
-    <input name = "cityname" id = "cityname" type="text" class="form-input"/>
-    <button type="submit"  id="fetchButton" value="Submit"> Search City</button>
-    </form>
+    <div id="user-form"  placeholder="City Name">
+    <input  id = "city" type="text" class="input"/>
+    <button onclick="getInput()"  id="fetchButton" > Search City</button>
+    </div>
   </div>
   <div id="preset">
     <h3 id="entry"> Previously Searched:</h3>
-    <span id=" "> </span>
+    <li id ='list'> </li>
   </div>
-  <div id="weather"><h2 id ="cityname"><p id="weatherDay"></p> </h2></div>
+  <div id="weather"><h2 id ="cityname"><p id="cityname"></p><p id="weatherDay"></p> </h2></div>
   
 
 
@@ -39,4 +39,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
-7
+
